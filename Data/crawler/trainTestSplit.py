@@ -1,8 +1,4 @@
 import pickle
-import sys
-import math
-from collections import defaultdict
-import textUtils
 import random
 
 all_links=pickle.load(open("./saved_files/saved_links.p","r"))
@@ -24,7 +20,7 @@ train_links=[all_links[i] for i in range(TRAIN_LENGTH)]
 valid_links=[all_links[i] for i in range(TRAIN_LENGTH,VALID_LENGTH+TRAIN_LENGTH)]
 test_links=[all_links[i] for i in range(VALID_LENGTH+TRAIN_LENGTH,len(all_links))]
 
-print train_links[0]
+print(train_links[0])
 
 pickle.dump(train_links,open("./saved_files/train_links.p","wb"))
 pickle.dump(valid_links,open("./saved_files/valid_links.p","wb"))

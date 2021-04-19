@@ -1,33 +1,25 @@
-import torch
-import torch.autograd as autograd
-import torch.nn as nn
-import torch.nn.functional as F
-import torch.optim as optim
-from collections import defaultdict
-
-from utils import utilities as torch_utils
-import numpy as np
 import random
-import math
-import datetime
-import gc
-import sys
+
+import torch
 
 
-class Solver():
-    
+class Solver:
+
     def __init__(self):
         torch.manual_seed(1)
         random.seed(7867567)
-    
 
     def load(self):
+        return
 
     def save(self):
+        return
 
     def forward(self):
+        return
 
     def train(self):
-
+        return
 
     def score(self):
+        return
