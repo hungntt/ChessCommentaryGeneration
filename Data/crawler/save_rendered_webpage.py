@@ -46,7 +46,7 @@ class Render(QWebPage):
 def save_all():
     global cur_url
     global html_doc
-    all_links = pickle.load(open("./saved_files/saved_links.p", "r"))
+    all_links = pickle.load(open("./saved_files/saved_links.p", "rb"))
     # extra_links = pickle.load( open("extra_pages.p", "r") )
     print("len(all_links) = ", len(all_links))
     num = sys.argv[1]

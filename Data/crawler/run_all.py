@@ -1,9 +1,7 @@
-import pickle
-import sys
-import subprocess
 import os
-import time
-from subprocess import call
+import pickle
+import subprocess
+import sys
 
 processes = set()
 command = 'python classify.py'
@@ -12,8 +10,12 @@ max_processes = int(sys.argv[3])
 start = int(sys.argv[1])
 end = int(sys.argv[2])
 
-all_links = pickle.load(open("./saved_files/saved_links.p", "r"))
-extra_links = pickle.load(open("extra_pages.p", "r"))
+with open('saved_files/saved_links.p', 'rb') as file:
+    all_links = pickle.load(file)
+
+with open('extra_pages.p', 'rb') as file:
+    extra_links = pickle.load(file)
+
 for i, link in enumerate(all_links):
     if i < start:
         continue
