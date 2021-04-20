@@ -4,10 +4,9 @@ import pickle
 import sys
 import time
 
-from PyQt4 import QtCore
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
-from PyQt4.QtWebKit import *
+from PySide2 import QtCore
+from PySide2.QtWebEngineWidgets import QWebEnginePage
+from PySide2.QtWidgets import QApplication
 
 
 def parseArguments():
@@ -26,12 +25,12 @@ params = parseArguments()
 
 
 # Take this class for granted.Just use result of rendering.
-class Render(QWebPage):
+class Render(QWebEnginePage):
     def __init__(self, url):
         self.app = QApplication(sys.argv)
-        QWebPage.__init__(self)
+        QWebEnginePage.__init__(self)
         self.loadFinished.connect(self._loadFinished)
-        qurl = QUrl(url)
+        qurl = QtCore.QUrl(url)
         func = functools.partial(self.mainFrame().load, qurl)
         timer = QtCore.QTimer()
         timer.timeout.connect(func)
